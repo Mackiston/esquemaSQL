@@ -1,0 +1,19 @@
+DROP USER airbnb CASCADE;
+
+-- Creando el usuario
+CREATE USER airbnb IDENTIFIED BY 123456;
+
+--Privilegios
+GRANT CREATE SESSION, CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE SYNONYM
+TO airbnb;
+
+ALTER USER AIRBNB QUOTA 10G ON USERS;
+
+--Cambio de esquema
+ALTER SESSION SET CURRENT_SCHEMA=AIRBNB; 
+
+@@crearTablas.sql
+
+@@constraint.sql
+
+@@datos.sql

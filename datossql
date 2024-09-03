@@ -1,0 +1,48 @@
+INSERT INTO State (id, updated_at, created_at, name) VALUES
+('1', SYSDATE, SYSDATE, 'California'),
+('2', SYSDATE, SYSDATE, 'Nevada'),
+('3', SYSDATE, SYSDATE, 'Texas'),
+('4', SYSDATE, SYSDATE, 'New York'),
+('5', SYSDATE, SYSDATE, 'Florida');
+
+INSERT INTO City (id, updated_at, created_at, state_id, name) VALUES
+('1', SYSDATE, SYSDATE, '1', 'Los Angeles'),
+('2', SYSDATE, SYSDATE, '1', 'San Francisco'),
+('3', SYSDATE, SYSDATE, '2', 'Las Vegas'),
+('4', SYSDATE, SYSDATE, '3', 'Houston'),
+('5', SYSDATE, SYSDATE, '4', 'New York City');
+
+INSERT INTO Users (id, updated_at, created_at, email, password, first_name, last_name) VALUES
+('1', SYSDATE, SYSDATE, 'user1@example.com', 'password1', 'John', 'Doe'),
+('2', SYSDATE, SYSDATE, 'user2@example.com', 'password2', 'Jane', 'Smith'),
+('3', SYSDATE, SYSDATE, 'user3@example.com', 'password3', 'Emily', 'Jones'),
+('4', SYSDATE, SYSDATE, 'user4@example.com', 'password4', 'Michael', 'Brown'),
+('5', SYSDATE, SYSDATE, 'user5@example.com', 'password5', 'Sarah', 'Davis');
+
+INSERT INTO Place (id, updated_at, created_at, user_id, city_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude) VALUES
+('1', SYSDATE, SYSDATE, '1', '1', 'Beach House', 'A lovely beach house.', 3, 2, 6, 200, 34.0194, -118.4912),
+('2', SYSDATE, SYSDATE, '2', '2', 'City Apartment', 'A modern city apartment.', 2, 1, 4, 150, 37.7749, -122.4194),
+('3', SYSDATE, SYSDATE, '3', '3', 'Luxury Villa', 'A luxurious villa in the desert.', 5, 4, 10, 500, 36.1699, -115.1398),
+('4', SYSDATE, SYSDATE, '4', '4', 'Cozy Cottage', 'A cozy cottage in the city.', 2, 1, 4, 100, 29.7604, -95.3698),
+('5', SYSDATE, SYSDATE, '5', '5', 'Penthouse Suite', 'A penthouse suite with city views.', 4, 3, 8, 400, 40.7128, -74.0060);
+
+INSERT INTO Amenity (id, updated_at, created_at, name) VALUES
+('1', SYSDATE, SYSDATE, 'WiFi'),
+('2', SYSDATE, SYSDATE, 'Pool'),
+('3', SYSDATE, SYSDATE, 'Parking'),
+('4', SYSDATE, SYSDATE, 'Air Conditioning'),
+('5', SYSDATE, SYSDATE, 'Gym');
+
+INSERT INTO PlaceAmenity (amenity_id, place_id) VALUES
+('1', '1'),
+('2', '1'),
+('3', '2'),
+('4', '3'),
+('5', '4');
+
+INSERT INTO Review (id, updated_at, created_at, user_id, place_id, text) VALUES
+('1', SYSDATE, SYSDATE, '1', '1', 'Amazing stay! Loved the beach view.'),
+('2', SYSDATE, SYSDATE, '2', '2', 'Very convenient location.'),
+('3', SYSDATE, SYSDATE, '3', '3', 'The villa was absolutely beautiful.'),
+('4', SYSDATE, SYSDATE, '4', '4', 'A cozy place to stay in the city.'),
+('5', SYSDATE, SYSDATE, '5', '5', 'The penthouse suite was fantastic!');
